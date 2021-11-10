@@ -19,6 +19,9 @@ debugOn = False
 yesterday = date.today() - timedelta(days = 1)
 yesterdayString = yesterday.strftime('%Y') + '_' + yesterday.strftime('%m') + '_' + yesterday.strftime('%d')
 
+# I am taking /var/log/apache2/access.log.1 and /var/log/auth.log.1 and renaming those to [type]_[date].log with a different script, you will have to
+# adjust the code below to suit how you are handleing your logs. I have also changed auth.log to be rotated daily instead of weekly to prevent
+# overlaping multiple days of entries on a single map.
 # \/------Modify below to suit your own setup------\/
 
 apacheLogName = 'apache_' + yesterdayString + '.log' # I hand acces.logs to this script in the format of apache_YYYY_MM_DD.log
