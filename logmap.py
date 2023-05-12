@@ -129,7 +129,7 @@ ax.add_feature(cfeature.BORDERS, linewidth=0.1, edgecolor='white') # add country
 plt.title(yesterdayString, color='grey') # add a title
 
 for i in range(len(ipUniqueFull)):
-    if ipUniqueFull[i][5] != 0 and ipUniqueFull[i][6] != 0: # if the IP has non-zero coordinates plot them
+    if ipUniqueFull[i][5] != 0 and ipUniqueFull[i][6] != 0 and ipUniqueFull[i][5] is not None and ipUniqueFull[i][6] is not None: # if the IP has valid coordinates plot them
         if ipUniqueFull[i][2] == 'apache': # apache gets red markers
             plt.plot(ipUniqueFull[i][5], ipUniqueFull[i][6], markersize=0.5, color='red', marker='>')
         if ipUniqueFull[i][2] == 'sshd': # sshd gets yellow markers
