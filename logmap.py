@@ -114,7 +114,7 @@ for h in range(len(ipUniqueFull)):
 # linen>1: [IP],[no of hits],[apache/sshd],[shodan country],[shodan city],[shodan longitude],[shodan latitude],[shodan ISP]
 with open(csvOutputLocation + csvOutputName, 'w+', newline='') as csvFile:
     csvFile.write('Ip Log,'+ yesterdayString + ',Unique IPs:,' + str(len(ipUniqueFull)) + ',Total Hits:,' + str(len(ipListApache) + len(ipListSSHD)) + '\n')
-    csvFile.write('IP,Hits,Country,City,Longitude,Latitude,Isp\n')
+    csvFile.write('IP,Hits,Service,Country,City,Longitude,Latitude,Isp\n')
     for h in range(len(ipUniqueFull)):
         csvFile.write(ipUniqueFull[h][0] + ',' + str(ipUniqueFull[h][1]) + ',' + str(ipUniqueFull[h][2]) + ',' + ipUniqueFull[h][3].replace(',', '') + ',' + ipUniqueFull[h][4].replace(',', '') + ',' + str(ipUniqueFull[h][5]) + ',' + str(ipUniqueFull[h][6]) + ',' + ipUniqueFull[h][7].replace(',', '') + '\n')
 
